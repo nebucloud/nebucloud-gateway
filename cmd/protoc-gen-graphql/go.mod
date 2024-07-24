@@ -1,6 +1,6 @@
 module github.com/nebucloud/nebucloud-gateway/cmd/protoc-gen-graphql
 
-go 1.22.0
+go 1.22
 
 replace github.com/nebucloud/nebucloud-gateway => ../..
 
