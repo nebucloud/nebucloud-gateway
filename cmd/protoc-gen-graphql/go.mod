@@ -7,6 +7,9 @@ require (
 	google.golang.org/protobuf v1.34.2
 )
 
-require github.com/iancoleman/strcase v0.3.0 // indirect
+require (
+	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/iancoleman/strcase v0.3.0 // indirect
+)
 
 replace github.com/nebucloud/nebucloud-gateway => ../..
