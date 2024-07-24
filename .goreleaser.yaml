@@ -31,22 +31,24 @@ archives:
     builds:
       - protoc-gen-graphql
     format: tar.gz
-    name_template: >-
-      protoc-gen-graphql_
-      {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
-      {{- else }}{{ .Arch }}{{ end }}
+    files:
+      - none*  # Only include the binary
 
   - id: nebucloud-gateway
     format: tar.gz
     files:
-      - ptypes/**/*
-      - runtime/**/*
-      - spec/**/*
-      - README*
-      - LICENSE*
-      - CHANGELOG*
+      - src: ./ptypes
+        dst: ptypes
+      - src: ./runtime
+        dst: runtime
+      - src: ./spec
+        dst: spec
+      - src: ./README*
+        dst: .
+      - src: ./LICENSE*
+        dst: .
+      - src: ./CHANGELOG*
+        dst: .
 
 checksum:
   name_template: 'checksums.txt'
